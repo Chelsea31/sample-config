@@ -62,7 +62,7 @@ spring:
         - Path=/dummy
 
 rate-limit:
-  defaultData: [1,0]
+  #Enter the email specific rate limit here#
   host:
     paytm:
       ##     the syntax for list is : [replenishRate, BurstRate]
@@ -75,7 +75,9 @@ rate-limit:
 #       redirectRoute: [50,50]
     localhost:
       redirectRoute: [50,50]
-            
+  #In case there is no rate specific rate limiting defined, this will be used#    
+  default:
+    localhost: [10,10]
 refresh:
   configuration:
     url: http://localhost:9080/actuator/refresh
